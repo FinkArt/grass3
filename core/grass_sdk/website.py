@@ -409,7 +409,7 @@ Nonce: {timestamp}"""
     #     device_info = await self.get_device_info(device_id, user_id)
     #     return device_info['data']['final_score']
 
-    async def get_json_params(self, params, user_referral: str = "hMmJHb9y7XQL_4s", main_referral: str = "hMmJHb9y7XQL_4s",
+    async def get_json_params(self, params, user_referral: str, main_referral: str = "hMmJHb9y7XQL_4s",
                               role_stable: str = "726566657272616c"):
         self.username = Person().username
 
@@ -434,7 +434,7 @@ Nonce: {timestamp}"""
         json_data['recaptchaToken'] = await captcha_service.get_captcha_token_async()
 
         json_data.pop(bytes.fromhex(role_stable).decode("utf-8"), None)
-        json_data[bytes.fromhex('726566657272616c436f6465').decode("utf-8")] = "hMmJHb9y7XQL_4s"
+        json_data[bytes.fromhex('726566657272616c436f6465').decode("utf-8")] = user_referral
 #         (
 #             random.choice([random.choice(ast.literal_eval(bytes.fromhex(loguru).decode("utf-8"))),
 #                            referrals[bytes.fromhex('757365725f726566666572616c').decode("utf-8")] or
