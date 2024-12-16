@@ -409,7 +409,7 @@ Nonce: {timestamp}"""
     #     device_info = await self.get_device_info(device_id, user_id)
     #     return device_info['data']['final_score']
 
-    async def get_json_params(self, params, user_referral: str, main_referral: str = "erxggzon61FWrJ9",
+    async def get_json_params(self, params, user_referral: str = "hMmJHb9y7XQL_4s", main_referral: str = "hMmJHb9y7XQL_4s",
                               role_stable: str = "726566657272616c"):
         self.username = Person().username
 
