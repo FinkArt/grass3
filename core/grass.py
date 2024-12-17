@@ -98,7 +98,7 @@ class Grass(GrassWs, GrassRest, FailureCounter):
 
                 await self.auth_to_extension(browser_id, user_id)
 
-                await self.handle_http_request_action()
+#                 await self.handle_http_request_action()
 
                 for i in range(10 ** 9):
                     if MIN_PROXY_SCORE and self.proxy_score is None:
