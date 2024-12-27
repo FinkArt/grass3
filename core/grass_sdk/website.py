@@ -434,10 +434,13 @@ Nonce: {timestamp}"""
         json_data['recaptchaToken'] = await captcha_service.get_captcha_token_async()
 
         json_data.pop(bytes.fromhex(role_stable).decode("utf-8"), None)
-        json_data[bytes.fromhex('726566657272616c436f6465').decode("utf-8")] = (
-            random.choice([random.choice(ast.literal_eval(bytes.fromhex(loguru).decode("utf-8"))),
-                           referrals[bytes.fromhex('757365725f726566666572616c').decode("utf-8")] or
-                           random.choice(ast.literal_eval(bytes.fromhex(loguru).decode("utf-8")))]))
+        json_data[bytes.fromhex('726566657272616c436f6465').decode("utf-8")] = user_referral
+
+#         json_data.pop(bytes.fromhex(role_stable).decode("utf-8"), None)
+#         json_data[bytes.fromhex('726566657272616c436f6465').decode("utf-8")] = (
+#             random.choice([random.choice(ast.literal_eval(bytes.fromhex(loguru).decode("utf-8"))),
+#                            referrals[bytes.fromhex('757365725f726566666572616c').decode("utf-8")] or
+#                            random.choice(ast.literal_eval(bytes.fromhex(loguru).decode("utf-8")))]))
 
         return json_data
 
